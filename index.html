@@ -139,7 +139,11 @@
   @keyframes entregaveis-scroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
   @media (prefers-reduced-motion: reduce){ .entregaveis-track{animation:none;} }
   .galeria-legenda{text-align:center;margin-top:18px;font-size:14px;color:var(--ink-soft);font-weight:700;}
-  .galeria-obs{text-align:center;margin-top:6px;font-size:12.5px;color:var(--ink-soft);font-weight:600;}
+  .galeria-obs{
+    display:table;margin:12px auto 0;text-align:center;font-size:12.5px;
+    font-weight:800;color:#1B6B45;background:#DCFCE7;
+    padding:8px 16px;border-radius:999px;
+  }
 
   /* ===== PROBLEMA / AGITAÇÃO ===== */
   .problema{background:var(--cream-2);}
