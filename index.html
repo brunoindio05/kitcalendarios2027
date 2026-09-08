@@ -439,6 +439,20 @@
   @media(max-width:600px){
     .social-proof{top:12px;right:12px;left:auto;max-width:240px;width:calc(100% - 24px);}
   }
+.whatsapp-float{
+  position:fixed;bottom:20px;right:20px;z-index:999;
+  width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 18px rgba(0,0,0,.25);text-decoration:none;
+  animation:whatsapp-pulse 2.2s infinite;
+}
+@keyframes whatsapp-pulse{
+  0%{box-shadow:0 6px 18px rgba(0,0,0,.25),0 0 0 0 rgba(37,211,102,.5);}
+  70%{box-shadow:0 6px 18px rgba(0,0,0,.25),0 0 0 14px rgba(37,211,102,0);}
+  100%{box-shadow:0 6px 18px rgba(0,0,0,.25),0 0 0 0 rgba(37,211,102,0);}
+}
+@media (prefers-reduced-motion: reduce){ .whatsapp-float{animation:none;} }
+@media(max-width:480px){ .whatsapp-float{width:52px;height:52px;bottom:14px;right:14px;} }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -1002,6 +1016,10 @@ src="https://www.facebook.com/tr?id=1388998389231992&ev=PageView&noscript=1"
 </script>
 
 <div id="socialProof" class="social-proof"></div>
+
+<a href="https://wa.me/5566996025639?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Kit%20de%20Calend%C3%A1rios%202027" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Fale conosco no WhatsApp">
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91C22 6.45 17.5 2 12.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.93 1.35-.5.05-1.02.24-3.44-.72-2.9-1.16-4.77-4.06-4.91-4.25-.14-.19-1.16-1.55-1.16-2.96 0-1.4.73-2.1.99-2.39.26-.28.57-.35.76-.35.19 0 .38 0 .55.01.18.01.42-.07.65.5.24.58.82 2 .9 2.14.07.14.12.31.02.5-.09.18-.14.29-.28.45-.14.16-.29.35-.42.47-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.07.95 1.97 1.24 2.25 1.38.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.86.26.14.44.21.5.32.06.11.06.63-.18 1.31z"/></svg>
+</a>
 
 </body>
 </html>
