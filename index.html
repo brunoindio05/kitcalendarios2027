@@ -470,6 +470,20 @@
     .hero .hero-subtitle { margin-top: 8px; font-size: 15px; }
     .hero-checklist-block { margin: 14px auto; }
   }
+  .hero-scroll{
+    display:block;margin:18px auto 0;text-align:center;text-decoration:none;
+    font-family:'Baloo 2',sans-serif;font-weight:800;font-size:15px;color:#c1395f;
+  }
+  .hero-scroll-arrow{
+    display:block;width:10px;height:10px;margin:8px auto 0;
+    border-right:2px solid #c1395f;border-bottom:2px solid #c1395f;
+    transform:rotate(45deg);animation:hero-bounce 1.6s infinite;
+  }
+  @keyframes hero-bounce{
+    0%,100%{transform:rotate(45deg) translate(0,0);}
+    50%{transform:rotate(45deg) translate(4px,4px);}
+  }
+  @media (prefers-reduced-motion: reduce){ .hero-scroll-arrow{animation:none;} }
 </style>
 <script>
 (function(s,e,n,t,i){s[n]=s[n]||function(){(s[n].q=s[n].q||[]).push(arguments)};
@@ -495,22 +509,17 @@ e.head.appendChild(js)})(window,document,'sentinel','https://api.crispapelariape
 
   <p class="hero-subtitle">Uma coleção completa de modelos digitais para você imprimir, personalizar e produzir seus calendários de 2027 com muito mais praticidade.</p>
 
-  <div class="hero-checklist-block">
-    <div class="hero-checklist-row">
-      <span class="hero-check-item">✓ Acesso imediato</span>
-      <span class="hero-check-item">✓ Arquivos digitais</span>
-    </div>
-    <div class="hero-checklist-row hero-checklist-row-center">
-      <span class="hero-check-item">✓ Prontos para imprimir</span>
-    </div>
-  </div>
+  <a href="#modelos" class="hero-scroll">
+    Role para baixo e veja os modelos
+    <span class="hero-scroll-arrow"></span>
+  </a>
 </header>
 
 <!-- ===== GALERIA DE MODELOS ===== -->
-<section class="receber">
+<section class="receber" id="modelos">
   <div class="wrap">
     <div class="section-head">
-      <h2>Veja alguns dos modelos que você pode receber</h2>
+      <h2>Estes são alguns dos modelos que você recebe</h2>
       <p>Uma coleção pensada para você ter variedade e escolher o estilo ideal para cada projeto.</p>
     </div>
     <div class="entregaveis-carousel">
