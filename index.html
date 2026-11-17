@@ -232,18 +232,42 @@
   .cdot.active{background:var(--red);width:20px;border-radius:5px;}
 
   /* ===== BÔNUS ===== */
-  .bonus{background:var(--white);}
-  .bonus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;}
-  .bonus-card{background:var(--cream-2);border-radius:18px;padding:20px;text-align:center;}
-  .bonus-img-wrapper{aspect-ratio:1/1;border-radius:14px;overflow:hidden;background:#fff;margin-bottom:14px;}
-  .bonus-img-wrapper img{width:100%;height:100%;object-fit:cover;display:block;}
-  .bonus-card h3{font-family:'Baloo 2',sans-serif;font-size:15.5px;font-weight:800;margin-bottom:8px;color:var(--ink);}
-  .bonus-sub{font-size:13.5px;color:var(--ink-soft);font-weight:600;line-height:1.5;margin:0 0 14px;}
-  .bonus-price{display:flex;align-items:center;justify-content:center;gap:8px;}
-  .bonus-price .old-price{font-size:14px;color:#9C9086;text-decoration:line-through;font-weight:700;}
+  .bonus{background:var(--white);padding:36px 0;}
+  .bonus-head{text-align:center;margin:0 auto 22px;max-width:520px;}
+  .bonus-pill{
+    display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#fff;
+    font-family:'Baloo 2',sans-serif;font-weight:800;font-size:13px;
+    padding:8px 18px;border-radius:999px;margin-bottom:14px;
+  }
+  .bonus-pill svg{flex-shrink:0;}
+  .bonus-head h2{font-size:clamp(21px,3.4vw,28px);font-weight:800;line-height:1.2;margin:0;}
+  .bonus-head h2 span{color:#c1395f;}
+  .bonus-list{max-width:520px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+  .bonus-item{
+    position:relative;display:flex;align-items:center;gap:14px;
+    background:#fff;border:1px solid var(--line);border-radius:16px;
+    padding:12px;box-shadow:var(--shadow);
+  }
+  .bonus-tag{
+    position:absolute;top:-8px;left:10px;background:#c1395f;color:#fff;
+    font-family:'Baloo 2',sans-serif;font-weight:800;font-size:10.5px;
+    letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:8px;
+  }
+  .bonus-thumb{
+    width:84px;height:84px;flex-shrink:0;border-radius:12px;overflow:hidden;background:var(--cream-2);
+  }
+  .bonus-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+  .bonus-info h3{font-family:'Baloo 2',sans-serif;font-size:15.5px;font-weight:800;color:var(--ink);margin:0 0 3px;line-height:1.2;}
+  .bonus-info p{font-size:13px;color:var(--ink-soft);font-weight:600;line-height:1.4;margin:0 0 6px;}
+  .bonus-price{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .bonus-price .old-price{font-size:13px;color:#9C9086;text-decoration:line-through;font-weight:700;}
   .bonus-price .free-tag{
-    font-family:'Baloo 2',sans-serif;font-weight:800;font-size:13px;color:var(--green);
+    font-family:'Baloo 2',sans-serif;font-weight:800;font-size:12.5px;color:var(--green);
     background:var(--green-soft);padding:3px 10px;border-radius:999px;
+  }
+  .bonus-total{
+    text-align:center;margin:18px auto 0;max-width:520px;
+    font-family:'Baloo 2',sans-serif;font-weight:800;font-size:16px;color:var(--green);line-height:1.3;
   }
 
   /* ===== OFERTA ===== */
@@ -557,7 +581,7 @@ e.head.appendChild(js)})(window,document,'sentinel','https://api.crispapelariape
     <p class="galeria-legenda">São dezenas de modelos diferentes para você variar seus projetos.</p>
     <p class="galeria-obs">Todos os modelos temáticos de mesa estão traduzidos para português.</p>
     <div style="text-align:center;">
-      <a href="#bonus" class="cta-btn hero-cta">Quero meus calendários 2027</a>
+      <a href="#oferta" class="cta-btn hero-cta">Quero meus calendários 2027</a>
     </div>
   </div>
 </section>
@@ -624,6 +648,9 @@ e.head.appendChild(js)})(window,document,'sentinel','https://api.crispapelariape
         <p>Ótimo pra usar na Silhouette ou recortar na tesoura.</p>
       </div>
     </div>
+    <div style="text-align:center;margin-top:26px;">
+      <a href="#oferta" class="cta-btn hero-cta">Quero meus calendários 2027</a>
+    </div>
   </div>
 </section>
 
@@ -682,43 +709,67 @@ e.head.appendChild(js)})(window,document,'sentinel','https://api.crispapelariape
       </div>
       <div class="carousel-dots" id="depoDots"></div>
     </div>
+    <div style="text-align:center;margin-top:26px;">
+      <a href="#oferta" class="cta-btn hero-cta">Quero meus calendários 2027</a>
+    </div>
   </div>
 </section>
 
 <!-- ===== BÔNUS ===== -->
 <section class="bonus" id="bonus">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="section-eyebrow">Bônus inclusos</span>
-      <h2>Você também leva</h2>
-    </div>
-    <div class="bonus-grid">
-      <div class="bonus-card">
-        <div class="bonus-img-wrapper"><img src="img/bonus-1.webp" alt="Bônus: Guia de impressão"></div>
+<div class="wrap">
+  <div class="bonus-head">
+    <span class="bonus-pill">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><rect x="4" y="12" width="16" height="9" rx="1"/><path d="M12 8V21"/><path d="M12 8C12 8 12 4 9 4C7.5 4 7 5.2 7 6C7 7.5 8.5 8 9 8H12Z"/><path d="M12 8C12 8 12 4 15 4C16.5 4 17 5.2 17 6C17 7.5 15.5 8 15 8H12Z"/></svg>
+      Presente Especial
+    </span>
+    <h2>Compre agora e receba<span> +4 bônus exclusivos:</span></h2>
+  </div>
+
+  <div class="bonus-list">
+    <div class="bonus-item">
+      <span class="bonus-tag">Bônus 1</span>
+      <div class="bonus-thumb"><img src="img/bonus-1.webp" alt="Bônus: Guia de impressão"></div>
+      <div class="bonus-info">
         <h3>Guia de impressão</h3>
-        <p class="bonus-sub">PDF explicando como imprimir e montar seu calendário em casa.</p>
+        <p>PDF explicando como imprimir e montar seu calendário em casa.</p>
         <div class="bonus-price"><span class="old-price">R$ 17,90</span><span class="free-tag">Grátis</span></div>
       </div>
-      <div class="bonus-card">
-        <div class="bonus-img-wrapper"><img src="img/bonus-2.webp" alt="Bônus: Papéis recomendados"></div>
+    </div>
+
+    <div class="bonus-item">
+      <span class="bonus-tag">Bônus 2</span>
+      <div class="bonus-thumb"><img src="img/bonus-2.webp" alt="Bônus: Papéis recomendados"></div>
+      <div class="bonus-info">
         <h3>Papéis recomendados</h3>
-        <p class="bonus-sub">Lista de papéis para um acabamento com cara de produto premium.</p>
+        <p>Lista de papéis para um acabamento com cara de produto premium.</p>
         <div class="bonus-price"><span class="old-price">R$ 14,90</span><span class="free-tag">Grátis</span></div>
       </div>
-      <div class="bonus-card">
-        <div class="bonus-img-wrapper"><img src="img/bonus-3.webp" alt="Bônus: Calendários de parede A4"></div>
+    </div>
+
+    <div class="bonus-item">
+      <span class="bonus-tag">Bônus 3</span>
+      <div class="bonus-thumb"><img src="img/bonus-3.webp" alt="Bônus: Calendários de parede A4"></div>
+      <div class="bonus-info">
         <h3>Calendários de parede A4</h3>
-        <p class="bonus-sub">Modelo extra em formato A4 para imprimir e pendurar na parede.</p>
+        <p>Modelo extra em formato A4 para imprimir e pendurar na parede.</p>
         <div class="bonus-price"><span class="old-price">R$ 24,90</span><span class="free-tag">Grátis</span></div>
       </div>
-      <div class="bonus-card">
-        <div class="bonus-img-wrapper"><img src="img/bonus-4.webp" alt="Bônus: 10 Modelos Diversos"></div>
+    </div>
+
+    <div class="bonus-item">
+      <span class="bonus-tag">Bônus 4</span>
+      <div class="bonus-thumb"><img src="img/bonus-4.webp" alt="Bônus: 10 Modelos Diversos"></div>
+      <div class="bonus-info">
         <h3>10 Modelos Diversos</h3>
-        <p class="bonus-sub">São mais 10 modelinhos temáticos para você baixar, imprimir e usar ou vender.</p>
+        <p>Mais 10 modelinhos temáticos para baixar, imprimir e usar ou vender.</p>
         <div class="bonus-price"><span class="old-price">R$ 19,90</span><span class="free-tag">Grátis</span></div>
       </div>
     </div>
   </div>
+
+  <p class="bonus-total">Valor total dos bônus: R$ 77,60, tudo grátis no Premium</p>
+</div>
 </section>
 
 <!-- ===== OFERTA ===== -->
