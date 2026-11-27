@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raio-X Mágico da Lanterna — Kit com 30 Atividades sobre o Corpo Humano</title>
+<!-- Pixel do Meta / tracking: inserir aqui o script da sua conta -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F2F8FB;
+    --cream-2:#E6F1F7;
+    --ink:#1C2B36;
+    --ink-soft:#50707F;
+    --red:#D6293A;
+    --red-dark:#A81E2B;
+    --orange:#F4A63A;
+    --green:#3FA772;
+    --green-soft:#E7F5EC;
+    --accent:#2F6FED;
+    --gold:#C9962F;
+    --gold-soft:#FCEFD2;
+    --line:#D6E6EE;
+    --white:#FFFFFF;
+    --shadow: 0 12px 30px rgba(28,43,54,0.10);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Nunito',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Baloo 2',sans-serif;
+    line-height:1.1;
+    margin:0;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Baloo 2',sans-serif;font-weight:700;font-size:13px;
+    letter-spacing:.04em;text-transform:uppercase;
+    color:#1B6B45;background:#DCFCE7;
+    padding:8px 16px;border-radius:999px;
+  }
+  @media (max-width: 480px) {
+    .eyebrow { font-size: 11px; padding: 6px 12px; gap: 6px; }
+  }
+  button{font-family:inherit;cursor:pointer;border:none;}
+
+  /* ===== HERO ===== */
+  .hero{padding:56px 0 40px;text-align:center;background:#EAF4FA;}
+  .hero h1{
+    font-size:clamp(24px,4.6vw,42px);
+    font-weight:800;color:var(--ink);
+    max-width:760px;margin:18px auto 0;
+    text-align:center !important;width:100%;
+  }
+  .hero h1 .titulo-destaque{color:var(--accent);}
+  .hero h1 .titulo-verde-2{color:var(--green);}
+  .hero .hero-subtitle{
+    text-align:center;max-width:440px;margin:16px auto 0;
+    line-height:1.6;font-size:16px;color:var(--ink-soft);font-weight:600;
+  }
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 22px; line-height: 1.3; padding: 0 8px; }
+  }
+  .cover-image-wrapper { max-width: 480px; margin: 24px auto; background: transparent; }
+  .cover-image { width: 100%; aspect-ratio: 1 / 1; display: block; border: none; border-radius: 24px; box-shadow: 0 24px 48px rgba(28,43,54,0.22), 0 8px 16px rgba(28,43,54,0.14); }
+
+  .hero-checklist-block { max-width: 480px; margin: 24px auto; text-align: center; }
+  .hero-checklist-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 10px; }
+  .hero-checklist-row-center { justify-content: center; }
+  .hero-check-item {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--green-soft); color: var(--ink);
+    font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 999px;
+  }
+
+  .cta-btn{
+    font-family:'Baloo 2',sans-serif;font-weight:800;font-size:17px;
+    background:var(--green);color:#fff;
+    padding:18px 34px;border-radius:16px;
+    box-shadow:0 10px 24px rgba(63,167,114,.35);
+    margin-top:30px;display:inline-block;
+    transition:transform .15s ease;text-decoration:none;
+  }
+  .cta-btn:hover{transform:translateY(-2px);}
+  .cta-btn.hero-cta{animation:pulse-green 1.8s infinite;}
+  .faq-cta{text-align:center;}
+  .microtext{font-size:13px;color:var(--ink-soft);font-weight:700;margin-top:14px;}
+  .microtext.small{font-size:12.5px;margin-top:4px;}
+
+  /* ===== SECTION SHELL ===== */
+  section{padding:64px 0;}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 40px;}
+  .section-eyebrow{
+    display:block;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;
+  }
+  .section-head h2{font-size:clamp(24px,3.6vw,34px);font-weight:800;}
+  .section-head p{color:var(--ink-soft);font-weight:600;margin-top:10px;font-size:16px;}
+
+  /* ===== GALERIA DE MODELOS ===== */
+  .receber{background:var(--white);}
+  .entregaveis-carousel{ max-width:100%;margin:0 auto 14px;overflow:hidden; }
+  .entregaveis-track{ display:flex;width:max-content; animation:entregaveis-scroll 24s linear infinite; }
+  .entregaveis-slide{
+    width:220px;flex-shrink:0;aspect-ratio:1/1.4142;
+    margin-right:14px;border-radius:10px;overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);background:var(--cream-2);
+  }
+  .entregaveis-slide img{width:100%;height:100%;object-fit:cover;display:block;}
+  @keyframes entregaveis-scroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  @media (prefers-reduced-motion: reduce){ .entregaveis-track{animation:none;} }
+  .galeria-legenda{text-align:center;margin-top:18px;font-size:14px;color:var(--ink-soft);font-weight:700;}
+  .galeria-obs{
+    display:table;margin:12px auto 0;text-align:center;font-size:12.5px;
+    font-weight:800;color:#1B6B45;background:#DCFCE7;
+    padding:8px 16px;border-radius:999px;
+  }
+
+  /* ===== BENEFÍCIOS ===== */
+  .beneficios{background:var(--white);}
+  .beneficios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+  .beneficio-card{
+    background:var(--cream-2);border-radius:16px;padding:18px 20px;
+    display:flex;align-items:center;gap:12px;font-weight:700;font-size:14.5px;color:var(--ink);
+  }
+  .beneficio-card .check{
+    width:32px;height:32px;border-radius:50%;background:var(--green);color:#fff;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;font-weight:800;
+  }
+
+  /* ===== O QUE VEM NO PACK ===== */
+  .pack-interno{background:var(--cream-2);}
+  .pack-card{max-width:600px;margin:0 auto;background:#fff;border-radius:24px;padding:32px 28px;box-shadow:var(--shadow);}
+  .pack-eyebrow{display:block;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+  .pack-card h2{font-size:clamp(22px,3.2vw,28px);font-weight:800;margin-bottom:22px;}
+  .pack-checklist{list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:16px;}
+  .pack-checklist li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--ink-soft);font-weight:600;line-height:1.5;}
+  .pack-checklist li strong{color:var(--ink);}
+  .pack-checklist .check{color:var(--green);font-weight:800;flex-shrink:0;margin-top:2px;}
+  .pack-carousel{position:relative;max-width:320px;margin:0 auto;}
+  .pack-carousel-track{overflow:hidden;border-radius:16px;}
+  .pack-carousel-slides{display:flex;transition:transform .4s ease;}
+  .pack-slide{min-width:100%;aspect-ratio:1/1;background:var(--cream-2);}
+  .pack-slide img{width:100%;height:100%;object-fit:cover;display:block;}
+
+  /* ===== POR QUE ESTE PACK ===== */
+  .porque{background:var(--white);padding:36px 0;}
+  .porque .section-head{margin-bottom:22px;}
+  .porque-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;}
+  .porque-card{
+    background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;
+  }
+  .porque-card .icon{
+    display:inline-block;line-height:0;margin-bottom:6px;color:var(--ink-soft);
+  }
+  .porque-card .icon svg{display:block;}
+  .porque-card h3{font-family:'Baloo 2',sans-serif;font-size:13.5px;font-weight:800;margin-bottom:2px;color:var(--ink);}
+  .porque-card p{font-size:12.5px;color:var(--ink-soft);font-weight:600;margin:0;line-height:1.35;}
+  @media(max-width:600px){
+    .porque-grid{grid-template-columns:1fr;gap:8px;}
+    .porque-card{padding:11px 14px;}
+  }
+
+  /* ===== COMO FUNCIONA ===== */
+  .como-funciona{background:var(--cream-2);}
+  .processo-img-wrapper{
+    max-width:300px;margin:0 auto;aspect-ratio:9/16;
+    border-radius:20px;overflow:hidden;box-shadow:var(--shadow);background:#fff;
+  }
+  .processo-img-wrapper img{width:100%;height:100%;object-fit:cover;display:block;}
+  .processo-passos{max-width:560px;margin:26px auto 0;display:flex;flex-direction:column;gap:12px;}
+  .processo-passo{
+    display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);
+    border-radius:14px;padding:14px 16px;font-size:14.5px;font-weight:600;color:var(--ink-soft);
+  }
+  .processo-passo strong{color:var(--ink);}
+  .processo-num{
+    width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:13px;
+  }
+
+  /* ===== DEPOIMENTOS ===== */
+  .depo{background:var(--white);}
+  .depo-img-carousel{position:relative;max-width:280px;margin:0 auto;}
+  .depo-img-track{overflow:hidden;border-radius:20px;}
+  .depo-img-slides{display:flex;transition:transform .4s ease;}
+  .depo-img-slide{min-width:100%;aspect-ratio:9/16;background:var(--cream-2);}
+  .depo-img-slide img{width:100%;height:100%;object-fit:cover;display:block;border-radius:20px;}
+  .carousel-nav{display:flex;justify-content:center;gap:14px;margin-top:20px;}
+  .nav-btn{
+    width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;
+    color:var(--ink);box-shadow:var(--shadow);
+  }
+  .nav-btn:hover{background:var(--accent);color:#fff;}
+  .carousel-dots{display:flex;justify-content:center;gap:7px;margin-top:14px;}
+  .cdot{width:7px;height:7px;border-radius:50%;background:var(--line);transition:.2s;}
+  .cdot.active{background:var(--accent);width:20px;border-radius:5px;}
+
+  /* ===== OFERTA ===== */
+  .oferta{background:linear-gradient(180deg,var(--cream) 0%, var(--cream-2) 100%);}
+  .plans-single{ display:flex;justify-content:center; }
+  .plan-card{
+    background:#fff;border-radius:22px;padding:28px 24px;position:relative;
+    border:2px solid var(--line);box-shadow:var(--shadow);display:flex;flex-direction:column;
+    max-width:380px;width:100%;
+  }
+  .plan-card.premium{border-color:var(--green);background:linear-gradient(180deg,#fff 0%, var(--green-soft) 120%);}
+  .plan-tag{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:18px;color:var(--ink);text-align:center;margin-bottom:14px;}
+  .plan-price-block{text-align:center;margin-bottom:10px;}
+  .plan-price{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:36px;color:var(--green);display:block;margin:2px 0;}
+  .plan-old-price-line{font-size:13px;color:var(--ink-soft);font-weight:700;margin-bottom:2px;}
+  .plan-old-price{color:var(--red);text-decoration:line-through;font-weight:800;}
+  .plan-economia{font-size:13px;color:var(--green);font-weight:800;margin:2px 0 4px;}
+  .plan-price small{font-size:16px;font-weight:700;}
+  .plan-pay-once{font-size:12.5px;color:var(--ink-soft);font-weight:700;}
+  .plan-divider{height:1px;background:var(--line);margin:14px 0;}
+  .plan-list{list-style:none;padding:0;margin:0 0 6px;flex:1;}
+  .plan-list li{ font-size:14px;font-weight:600;color:var(--ink);padding:7px 0; display:flex;gap:9px;align-items:flex-start; }
+  .plan-list li::before{content:'✔';color:var(--red);font-weight:800;flex-shrink:0;}
+  .plan-list li.star-item{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:14.5px;color:var(--gold);}
+  .plan-list li.star-item::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:6px;}
+  .plan-btn{
+    font-family:'Baloo 2',sans-serif;font-weight:800;font-size:16px;
+    padding:16px;border-radius:14px;text-align:center;width:100%;
+    display:block;text-decoration:none;border:none;cursor:pointer;box-sizing:border-box;
+    background:var(--green);color:#fff;box-shadow:0 10px 22px rgba(63,167,114,.35);
+    animation:pulse-green 1.8s infinite;margin-top:6px;
+  }
+  @keyframes pulse-green{
+    0%{box-shadow:0 10px 22px rgba(63,167,114,.35),0 0 0 0 rgba(63,167,114,.5);}
+    70%{box-shadow:0 10px 22px rgba(63,167,114,.35),0 0 0 12px rgba(63,167,114,0);}
+    100%{box-shadow:0 10px 22px rgba(63,167,114,.35),0 0 0 0 rgba(63,167,114,0);}
+  }
+  @media (prefers-reduced-motion: reduce){ .plan-btn{animation:none;} }
+  .trust-row{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    margin-top:26px;font-size:13px;color:var(--ink-soft);font-weight:700;
+    text-align:center;flex-wrap:wrap;
+  }
+  .trust-row .lock{color:var(--green);}
+
+  /* ===== QUEM CRIOU O PROJETO ===== */
+  .criadora{background:var(--cream);padding:40px 0;}
+  .criadora-card{
+    max-width:820px;margin:0 auto;background:#fff;border:1px solid var(--line);
+    border-radius:22px;padding:28px;display:flex;align-items:center;gap:28px;
+    box-shadow:var(--shadow);
+  }
+  .criadora-foto{
+    width:120px;height:120px;border-radius:50%;object-fit:cover;flex-shrink:0;
+    border:4px solid var(--accent);box-shadow:0 8px 20px rgba(0,0,0,.15);
+  }
+  .criadora-eyebrow{
+    display:block;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:4px;
+  }
+  .criadora-nome{font-family:'Baloo 2',sans-serif;font-size:26px;font-weight:800;color:var(--ink);margin:0 0 4px;}
+  .criadora-cargo{font-size:13.5px;font-weight:800;color:var(--ink-soft);margin:0 0 10px;}
+  .criadora-texto{font-size:14.5px;color:var(--ink-soft);font-weight:600;line-height:1.6;margin:0 0 14px;}
+  .criadora-chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .criadora-chip{background:var(--green-soft);color:var(--ink);font-size:12.5px;font-weight:700;padding:7px 14px;border-radius:999px;}
+  @media(max-width:600px){
+    .criadora-card{flex-direction:column;text-align:center;padding:24px 20px;gap:16px;}
+    .criadora-chips{justify-content:center;}
+  }
+
+  /* ===== GARANTIA ===== */
+  .garantia{background:var(--cream-2);}
+  .garantia-box{
+    max-width:680px;margin:0 auto;text-align:center;
+    background:#EEF2FD;border:1px solid #D7E0FA;border-radius:22px;padding:40px 30px;
+  }
+  .garantia-selo{display:block;width:64px;height:64px;margin:0 auto 16px;object-fit:contain;}
+  .garantia-box h3{font-size:22px;font-weight:800;color:#1E3A66;margin-bottom:12px;}
+  .garantia-box p{font-size:15px;color:var(--ink-soft);font-weight:600;line-height:1.6;margin-bottom:14px;}
+  .garantia-secure{font-size:14px;color:var(--ink-soft);font-weight:700;margin-bottom:14px;}
+  .metodos-row{ display:flex;justify-content:center;gap:12px;flex-wrap:wrap; font-size:13px;font-weight:700;color:var(--ink-soft); }
+  .metodos-row span{background:#fff;padding:6px 12px;border-radius:999px;border:1px solid var(--line);}
+
+  /* ===== FAQ ===== */
+  .faq{background:var(--white);}
+  .faq-list{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+  .faq-item{background:var(--cream-2);border-radius:14px;border:1px solid var(--line);overflow:hidden;}
+  .faq-q{
+    width:100%;background:none;padding:18px 20px;text-align:left;
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:'Baloo 2',sans-serif;font-weight:700;font-size:15px;color:var(--ink);
+  }
+  .faq-q .plus{font-size:20px;color:var(--red);transition:transform .2s;flex-shrink:0;margin-left:12px;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;padding:0 20px;}
+  .faq-item.open .faq-a{max-height:320px;padding-bottom:18px;}
+  .faq-a p{margin:0;font-size:14px;color:var(--ink-soft);font-weight:600;line-height:1.6;}
+
+  .guarantee{
+    max-width:680px;margin:34px auto 0;display:flex;gap:14px;align-items:center;
+    background:var(--green-soft);border:1px solid #C9E7D3;border-radius:16px;padding:18px 20px;
+  }
+  .guarantee .seal{width:36px;height:36px;object-fit:contain;flex-shrink:0;}
+  .guarantee strong{display:block;font-family:'Baloo 2',sans-serif;font-size:15px;margin-bottom:2px;}
+  .guarantee span{font-size:13.5px;color:var(--ink-soft);font-weight:600;}
+
+  footer{padding:34px 0;text-align:center;font-size:12.5px;color:var(--ink-soft);font-weight:600;}
+  footer .footer-lock{font-size:15px;margin-bottom:10px;display:block;}
+  footer .footer-links{margin-top:10px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+  footer .footer-links a{text-decoration:none;color:var(--ink-soft);}
+  footer .footer-links a:hover{color:var(--ink);}
+
+  @media(max-width:600px){ section{ padding:48px 0; } }
+
+  .social-proof{
+    position:fixed;top:16px;right:16px;left:auto;z-index:9999;
+    max-width:240px;width:calc(100% - 32px);
+  }
+  .sp-card{
+    display:flex;align-items:flex-start;gap:8px;
+    background:#fff;border-radius:14px;padding:10px 12px;
+    box-shadow:0 10px 26px rgba(0,0,0,.14);border:1px solid var(--line);
+    opacity:0;transform:translateX(20px);
+    transition:opacity .35s ease,transform .35s ease;
+  }
+  .sp-card.show{opacity:1;transform:translateX(0);}
+  .sp-icon{
+    width:28px;height:28px;border-radius:50%;flex-shrink:0;
+    background:#DCFCE7;display:flex;align-items:center;justify-content:center;color:#22C55E;
+  }
+  .sp-icon svg{width:15px;height:15px;}
+  .sp-name{font-weight:800;font-size:12.5px;color:var(--ink);}
+  .sp-text{font-size:12px;color:var(--ink-soft);font-weight:600;line-height:1.35;}
+  .sp-text .sp-plan{color:var(--green);font-weight:800;}
+  .sp-loc{font-size:10.5px;color:#9AA7AC;font-weight:600;margin-top:2px;}
+  @media(max-width:600px){
+    .social-proof{top:12px;right:12px;left:auto;max-width:240px;width:calc(100% - 24px);}
+  }
+  @media (max-width: 600px) {
+    .hero { padding: 24px 0 24px; }
+    .cover-image-wrapper { max-width: 280px; margin: 12px auto; }
+    .hero .hero-subtitle { margin-top: 8px; font-size: 15px; }
+    .hero-checklist-block { margin: 14px auto; }
+  }
+  .hero-scroll{
+    display:block;margin:18px auto 0;text-align:center;text-decoration:none;
+    font-family:'Baloo 2',sans-serif;font-weight:800;font-size:15px;color:var(--accent);
+  }
+  .hero-scroll-arrow{
+    display:block;width:10px;height:10px;margin:8px auto 0;
+    border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);
+    transform:rotate(45deg);animation:hero-bounce 1.6s infinite;
+  }
+  @keyframes hero-bounce{
+    0%,100%{transform:rotate(45deg) translate(0,0);}
+    50%{transform:rotate(45deg) translate(4px,4px);}
+  }
+  @media (prefers-reduced-motion: reduce){ .hero-scroll-arrow{animation:none;} }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<header class="hero wrap">
+  <span class="eyebrow">Atividade com efeito de lanterna</span>
+  <h1>Aponte a <span class="titulo-destaque">lanterna</span> e veja o corpo por dentro: ossos, músculos e órgãos aparecem como em um <span class="titulo-verde-2">raio-x de verdade</span></h1>
+
+  <div class="cover-image-wrapper">
+    <img src="img/mockup.webp" alt="Raio-X Mágico da Lanterna" class="cover-image">
+  </div>
+
+  <p class="hero-subtitle">Kit com 30 atividades digitais para imprimir, recortar e montar. A criança descobre como funciona o corpo humano brincando, com a ajuda de uma simples lanterna.</p>
+
+  <div class="hero-checklist-block">
+    <div class="hero-checklist-row hero-checklist-row-center">
+      <span class="hero-check-item">✓ 30 atividades</span>
+      <span class="hero-check-item">✓ A partir de 4 anos</span>
+      <span class="hero-check-item">✓ Acesso imediato</span>
+    </div>
+  </div>
+
+  <a href="#modelos" class="hero-scroll">
+    Role para baixo e veja as atividades
+    <span class="hero-scroll-arrow"></span>
+  </a>
+</header>
+
+<!-- ===== GALERIA DE MODELOS ===== -->
+<section class="receber" id="modelos">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Estas são algumas das atividades que você recebe</h2>
+      <p>Páginas para montar o efeito raio-x e cartões para aprender sobre hábitos saudáveis.</p>
+    </div>
+    <div class="entregaveis-carousel">
+      <div class="entregaveis-track">
+        <div class="entregaveis-slide"><img src="img/1.webp" alt="Atividade 1"></div>
+        <div class="entregaveis-slide"><img src="img/2.webp" alt="Atividade 2"></div>
+        <div class="entregaveis-slide"><img src="img/3.webp" alt="Atividade 3"></div>
+        <div class="entregaveis-slide"><img src="img/4.webp" alt="Atividade 4"></div>
+        <div class="entregaveis-slide"><img src="img/5.webp" alt="Atividade 5"></div>
+        <div class="entregaveis-slide"><img src="img/6.webp" alt="Atividade 6"></div>
+        <div class="entregaveis-slide"><img src="img/1.webp" alt="Atividade 1"></div>
+        <div class="entregaveis-slide"><img src="img/2.webp" alt="Atividade 2"></div>
+        <div class="entregaveis-slide"><img src="img/3.webp" alt="Atividade 3"></div>
+        <div class="entregaveis-slide"><img src="img/4.webp" alt="Atividade 4"></div>
+        <div class="entregaveis-slide"><img src="img/5.webp" alt="Atividade 5"></div>
+        <div class="entregaveis-slide"><img src="img/6.webp" alt="Atividade 6"></div>
+      </div>
+    </div>
+    <p class="galeria-legenda">São 30 páginas diferentes: sistema circulatório, digestivo, muscular, cérebro, pulmão, estômago, rim, fígado e intestino.</p>
+    <p class="galeria-obs">Material completo em português, pronto para imprimir.</p>
+    <div style="text-align:center;">
+      <a href="#oferta" class="cta-btn hero-cta">Quero o meu Raio-X Mágico</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMO FUNCIONA ===== -->
+<section class="como-funciona">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">Simples de montar</span>
+      <h2>Veja como funciona a mágica da lanterna</h2>
+    </div>
+    <div class="processo-img-wrapper">
+      <img src="img/passo.webp" alt="Veja como é fácil o processo">
+    </div>
+    <div class="processo-passos">
+      <div class="processo-passo"><span class="processo-num">1</span><span><strong>Recorte</strong> a página na linha pontilhada, separando a silhueta da criança da parte colorida com os órgãos.</span></div>
+      <div class="processo-passo"><span class="processo-num">2</span><span><strong>Cole</strong> a silhueta sobre a parte colorida, alinhando os contornos.</span></div>
+      <div class="processo-passo"><span class="processo-num">3</span><span><strong>Apague a luz</strong> e ilumine por trás com uma lanterna — o papel fica translúcido e os órgãos aparecem, como num raio-x de verdade.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== POR QUE ESTE PACK ===== -->
+<section class="porque">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">Por que este pack</span>
+      <h2>Feito para ensinar e divertir</h2>
+    </div>
+    <div class="porque-grid">
+      <div class="porque-card">
+        <span class="icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/></svg></span>
+        <h3>Acesso imediato</h3>
+        <p>Baixe assim que comprar, sem esperar entrega.</p>
+      </div>
+      <div class="porque-card">
+        <span class="icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.2"/><rect x="14" y="3" width="7" height="7" rx="1.2"/><rect x="3" y="14" width="7" height="7" rx="1.2"/><rect x="14" y="14" width="7" height="7" rx="1.2"/></svg></span>
+        <h3>30 atividades no pack</h3>
+        <p>Sistemas do corpo e órgãos individuais, em saúde e doença.</p>
+      </div>
+      <div class="porque-card">
+        <span class="icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg></span>
+        <h3>Reimprima sempre</h3>
+        <p>O arquivo é seu — imprima quantas vezes quiser.</p>
+      </div>
+      <div class="porque-card">
+        <span class="icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.3 12.5l2.6 2.6 4.8-5.2"/></svg></span>
+        <h3>Alta resolução</h3>
+        <p>Impressão nítida e com acabamento profissional.</p>
+      </div>
+      <div class="porque-card">
+        <span class="icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V4h12v5"/><rect x="4" y="9" width="16" height="7" rx="1.3"/><path d="M8 13h8v7H8z"/></svg></span>
+        <h3>Imprima onde quiser</h3>
+        <p>Em casa ou numa gráfica.</p>
+      </div>
+      <div class="porque-card">
+        <span class="icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 3 2 4 2 7h10c0-3 2-4 2-7a7 7 0 0 0-7-7Z"/><path d="M9 21h6"/></svg></span>
+        <h3>Aprendizado brincando</h3>
+        <p>Introduz anatomia e hábitos saudáveis de forma simples e visual.</p>
+      </div>
+      <div class="porque-card">
+        <span class="icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v6"/><path d="M18 2v6"/><path d="M3 8h18l-1 4a8 8 0 0 1-16 0Z"/><path d="M12 16v6"/></svg></span>
+        <h3>Coordenação motora</h3>
+        <p>Fortalece as mãos com recorte, colagem e montagem.</p>
+      </div>
+      <div class="porque-card">
+        <span class="icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9Z"/></svg></span>
+        <h3>Menos medo do médico</h3>
+        <p>Entender o corpo por dentro ajuda a reduzir o susto em consultas.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:26px;">
+      <a href="#oferta" class="cta-btn hero-cta">Quero o meu Raio-X Mágico</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== O QUE VEM NO PACK ===== -->
+<section class="pack-interno">
+  <div class="wrap">
+    <div class="pack-card">
+      <span class="pack-eyebrow">O que vem no pack</span>
+      <h2>Como é o seu produto por dentro</h2>
+      <ul class="pack-checklist">
+        <li><span class="check">✓</span><span><strong>6 páginas</strong> no formato "Raio-X Mágico", com silhueta e órgãos para recortar, colar e iluminar.</span></li>
+        <li><span class="check">✓</span><span><strong>24 páginas</strong> de cartões numerados para parear órgãos saudáveis e doentes com hábitos do dia a dia.</span></li>
+        <li><span class="check">✓</span><span><strong>Alta resolução</strong>, prontas para impressão caseira ou em gráfica.</span></li>
+      </ul>
+      <div class="pack-carousel">
+        <div class="pack-carousel-track">
+          <div class="pack-carousel-slides" id="packSlides">
+            <div class="pack-slide"><img src="img/pack-1.webp" alt="Como fica a atividade impressa — modelo 1"></div>
+            <div class="pack-slide"><img src="img/pack-2.webp" alt="Como fica a atividade impressa — modelo 2"></div>
+          </div>
+        </div>
+        <div class="carousel-nav">
+          <button class="nav-btn" id="packPrevBtn">‹</button>
+          <button class="nav-btn" id="packNextBtn">›</button>
+        </div>
+        <div class="carousel-dots" id="packDots"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DEPOIMENTOS ===== -->
+<!-- Depoimentos ilustrativos — substituir pelas imagens reais assim que houver -->
+<section class="depo">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">Depoimentos reais</span>
+      <h2>Quem já baixou e fez, aprovou</h2>
+    </div>
+    <div class="depo-img-carousel">
+      <div class="depo-img-track">
+        <div class="depo-img-slides" id="depoSlides">
+          <div class="depo-img-slide"><img src="img/depo-1.webp" alt="Depoimento real 1"></div>
+          <div class="depo-img-slide"><img src="img/depo-2.webp" alt="Depoimento real 2"></div>
+          <div class="depo-img-slide"><img src="img/depo-3.webp" alt="Depoimento real 3"></div>
+          <div class="depo-img-slide"><img src="img/depo-4.webp" alt="Depoimento real 4"></div>
+        </div>
+      </div>
+      <div class="carousel-nav">
+        <button class="nav-btn" id="depoPrevBtn">‹</button>
+        <button class="nav-btn" id="depoNextBtn">›</button>
+      </div>
+      <div class="carousel-dots" id="depoDots"></div>
+    </div>
+    <div style="text-align:center;margin-top:26px;">
+      <a href="#oferta" class="cta-btn hero-cta">Quero o meu Raio-X Mágico</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OFERTA ===== -->
+<section class="oferta" id="oferta">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Garanta o seu kit completo</h2>
+      <p>Pagamento único, acesso imediato após a confirmação.</p>
+    </div>
+    <div class="plans-single">
+      <div class="plan-card premium">
+        <div class="plan-tag">Raio-X Mágico da Lanterna</div>
+        <div class="plan-price-block">
+          <div class="plan-old-price-line">De <span class="plan-old-price">R$ 47,90</span> por</div>
+          <div class="plan-price">R$ 17<small>,90</small></div>
+          <div class="plan-economia">Economize R$ 30,00</div>
+          <div class="plan-pay-once">pagamento único</div>
+        </div>
+        <div class="plan-divider"></div>
+        <ul class="plan-list">
+          <li class="star-item">30 atividades do Raio-X Mágico da Lanterna</li>
+          <li>Arquivo digital em alta resolução</li>
+          <li>Guia de montagem incluso</li>
+          <li>Pronto para imprimir em casa ou gráfica</li>
+          <li>Acesso imediato</li>
+          <li>Garantia de 7 dias</li>
+        </ul>
+        <!-- TROCAR o href abaixo pelo link real do seu checkout -->
+        <a href="#" class="plan-btn">Quero o meu Raio-X Mágico</a>
+      </div>
+    </div>
+    <img src="img/metodos.webp" alt="Formas de pagamento aceitas" style="max-width:220px;width:100%;margin:32px auto 0;display:block;">
+  </div>
+</section>
+
+<!-- ===== QUEM CRIOU O PROJETO ===== -->
+<section class="criadora">
+  <div class="wrap">
+    <div class="criadora-card">
+      <img src="img/perfil.webp" alt="Criadora do projeto" class="criadora-foto">
+      <div class="criadora-info">
+        <span class="criadora-eyebrow">Quem criou o projeto</span>
+        <h3 class="criadora-nome">Cristina Linz</h3>
+        <p class="criadora-cargo">Papeleira desde 2012</p>
+        <p class="criadora-texto">Com mais de 10 anos de dedicação à papelaria e à produção de materiais educativos, desenvolvi o Raio-X Mágico da Lanterna pensando na praticidade: arquivos com corte descomplicado, visual didático e montagem rápida para fazer em casa com as crianças.</p>
+        <div class="criadora-chips">
+          <span class="criadora-chip">✓ +10 anos na papelaria</span>
+          <span class="criadora-chip">✓ Prontos para imprimir</span>
+          <span class="criadora-chip">✓ Guia de montagem em PDF</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GARANTIA ===== -->
+<section class="garantia">
+  <div class="wrap">
+    <div class="garantia-box">
+      <img src="img/garantia.webp" alt="Garantia" class="garantia-selo">
+      <h3>Você tem 7 dias para conhecer o material</h3>
+      <p>Você pode acessar o material, conhecer o conteúdo e decidir se ele é ideal para você. Se dentro de 7 dias você entender que o material não atende às suas expectativas, poderá solicitar o reembolso conforme as condições da compra.</p>
+      <div class="garantia-secure">🔒 Sua compra é 100% segura e protegida</div>
+      <div class="metodos-row"><span>Pix</span><span>Cartão de crédito</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq">
+  <div class="wrap">
+    <div class="section-head"><h2>Perguntas frequentes</h2></div>
+    <div class="faq-list" id="faqList">
+      <div class="faq-item">
+        <button class="faq-q">O produto é físico? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Não. O produto é 100% digital. Você recebe os arquivos em PDF para baixar e imprimir.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Para qual idade é indicado? <span class="plus">+</span></button>
+        <div class="faq-a"><p>A partir de 4 anos, sempre com a participação de um adulto no recorte, na colagem e no uso da lanterna.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Preciso de algum equipamento especial? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Não. Você precisa apenas de impressora, tesoura, cola e uma lanterna (até a do celular funciona).</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Como recebo o material? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Após a confirmação do pagamento, você recebe as instruções para acessar e baixar seu material digital no e-mail cadastrado.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Quantas atividades vêm no kit? <span class="plus">+</span></button>
+        <div class="faq-a"><p>O kit contém 30 páginas: 6 no formato "Raio-X Mágico" e 24 de cartões para parear hábitos saudáveis e órgãos.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Posso imprimir mais de uma vez? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Sim. O arquivo é seu e pode ser impresso quantas vezes quiser.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Tenho garantia? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Sim. A compra possui garantia de 7 dias, conforme as condições informadas na oferta.</p></div>
+      </div>
+    </div>
+
+    <div class="faq-cta">
+      <a href="#oferta" class="cta-btn">Tirei minhas dúvidas, quero garantir o meu!</a>
+    </div>
+
+    <div class="guarantee">
+      <img src="img/garantia.webp" alt="Garantia" class="seal">
+      <div><strong>Garantia de 7 dias</strong><span>Se não gostar do material, devolvemos 100% do seu dinheiro, sem perguntas.</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Raio-X Mágico da Lanterna · Produto digital · © 2026 Todos os direitos reservados.
+  <div class="footer-links">
+    <a href="#">Termos de Uso</a>
+    <a href="#">Política de Privacidade</a>
+    <a href="#">Política de Reembolso</a>
+    <a href="#">Contato</a>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+
+  // ---- Carrossel de depoimentos ----
+  (function(){
+    const slides = document.getElementById('depoSlides');
+    const slideEls = slides.children;
+    const dotsWrap = document.getElementById('depoDots');
+    let index = 0;
+    for(let i=0;i<slideEls.length;i++){
+      const d = document.createElement('div');
+      d.className = 'cdot' + (i===0?' active':'');
+      dotsWrap.appendChild(d);
+    }
+    function render(){
+      slides.style.transform = `translateX(-${index*100}%)`;
+      [...dotsWrap.children].forEach((d,i)=> d.classList.toggle('active', i===index));
+    }
+    document.getElementById('depoNextBtn').onclick = ()=>{ index = (index+1)%slideEls.length; render(); };
+    document.getElementById('depoPrevBtn').onclick = ()=>{ index = (index-1+slideEls.length)%slideEls.length; render(); };
+  })();
+
+  // ---- Carrossel "o que vem no pack" ----
+  (function(){
+    const slides = document.getElementById('packSlides');
+    const slideEls = slides.children;
+    const dotsWrap = document.getElementById('packDots');
+    let index = 0;
+    for(let i=0;i<slideEls.length;i++){
+      const d = document.createElement('div');
+      d.className = 'cdot' + (i===0?' active':'');
+      dotsWrap.appendChild(d);
+    }
+    function render(){
+      slides.style.transform = `translateX(-${index*100}%)`;
+      [...dotsWrap.children].forEach((d,i)=> d.classList.toggle('active', i===index));
+    }
+    document.getElementById('packNextBtn').onclick = ()=>{ index = (index+1)%slideEls.length; render(); };
+    document.getElementById('packPrevBtn').onclick = ()=>{ index = (index-1+slideEls.length)%slideEls.length; render(); };
+  })();
+
+  // ---- FAQ accordion ----
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click', ()=>{ btn.parentElement.classList.toggle('open'); });
+  });
+
+  // ---- Notificações de prova social ----
+  (function(){
+    const notificacoes = [
+      { nome: "Mariana S.", cidade: "Belo Horizonte" },
+      { nome: "Carla E.", cidade: "Curitiba" },
+      { nome: "Fernanda L.", cidade: "Recife" },
+      { nome: "Juliana M.", cidade: "Porto Alegre" },
+      { nome: "Rafaela T.", cidade: "São Paulo" },
+      { nome: "Patrícia G.", cidade: "Salvador" },
+      { nome: "Camila R.", cidade: "Fortaleza" },
+      { nome: "Bruna A.", cidade: "Goiânia" },
+      { nome: "Luciana F.", cidade: "Campinas" },
+      { nome: "Vanessa D.", cidade: "Brasília" },
+      { nome: "Beatriz F.", cidade: "Manaus" },
+      { nome: "Larissa N.", cidade: "Florianópolis" },
+      { nome: "Tainá C.", cidade: "Natal" },
+      { nome: "Débora S.", cidade: "Belém" },
+      { nome: "Renata P.", cidade: "Uberlândia" },
+    ];
+
+    let idx = 0;
+
+    function showNotification(){
+      const n = notificacoes[idx % notificacoes.length];
+      idx++;
+      const container = document.getElementById('socialProof');
+      if(!container) return;
+      const card = document.createElement('div');
+      card.className = 'sp-card';
+      card.innerHTML = `
+        <div class="sp-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.1 15.9 4.5 17 5.4 17H17M17 17C15.9 17 15 17.9 15 19C15 20.1 15.9 21 17 21C18.1 21 19 20.1 19 19C19 17.9 18.1 17 17 17ZM9 19C9 20.1 8.1 21 7 21C5.9 21 5 20.1 5 19C5 17.9 5.9 17 7 17C8.1 17 9 17.9 9 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="sp-name">${n.nome}</div>
+          <div class="sp-text">Comprou o <span class="sp-plan">Raio-X Mágico</span> agora</div>
+          <div class="sp-loc">${n.cidade}</div>
+        </div>
+      `;
+      container.innerHTML = '';
+      container.appendChild(card);
+      requestAnimationFrame(()=> card.classList.add('show'));
+      setTimeout(()=>{
+        card.classList.remove('show');
+        setTimeout(()=>{ if(card.parentNode) card.remove(); }, 400);
+      }, 5000);
+    }
+
+    setTimeout(showNotification, 4000);
+    setInterval(showNotification, 20000);
+  })();
+
+  // ---- Dificultar clonagem casual (não impede clonagem técnica) ----
+  document.querySelectorAll('img').forEach(function(img){ img.setAttribute('draggable', 'false'); });
+</script>
+
+<div id="socialProof" class="social-proof"></div>
+
+</body>
+</html>
